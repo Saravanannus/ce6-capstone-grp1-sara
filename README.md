@@ -1,8 +1,9 @@
-# ce6-capstone-grp1
-Introduction
+# ce6-capstone-grp1 #
+#### Introduction ####
 This is a sample application used to demonstrate a POC of using GitHub Actions to deploy to AWS ECR and Fargate.
-## The Team Consist of:
-- Jyoti
+
+## The Team Consist of: ##
+- Jyoti Rani
 - Kerenp
 - Saravanan.B
 - VVenila
@@ -11,12 +12,9 @@ This is a sample application used to demonstrate a POC of using GitHub Actions t
 
 ![image](https://github.com/user-attachments/assets/ac446041-38a4-4615-a08f-5942960dacdc)
 
-
-
 ![alt text](image.png)
 
-
-## List of AWS Resources used in this Project:
+## List of AWS Resources used in this Project: ##
 
 **1. GitHub Actions** – Automates the CI/CD pipeline.
 
@@ -43,7 +41,7 @@ Developers push code changes to the repository on dev, stage, or prod branches.
 
 The CI/CD pipeline builds a Docker image from the code and pushes it to AWS ECR.
 
-#### 3. ECS Cluster Deployment:
+#### 3. ECS Cluster Deployment: ####
 
 ECS clusters (dev-cluster, stage-cluster, and prod-cluster) are configured with services and containers running on Fargate.
 
