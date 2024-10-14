@@ -18,18 +18,21 @@ This project is a Node.js web application containerized with Docker and deployed
 
 **AWS Account:** 
   
-You’ll need an AWS account with permissions to create ECS clusters, services, task definitions, and ECR (Elastic Container Registry) repositories.
+- You’ll need an AWS account with permissions to create ECS clusters, services, task definitions, and ECR (Elastic Container Registry) repositories.
 
 **Terraform Installed:** 
 
-Ensure Terraform is installed on your local machine for infrastructure provisioning.
+- Ensure Terraform is installed on your local machine for infrastructure provisioning.
 AWS CLI: Install the AWS CLI for managing AWS resources.
 
 **GitHub Secrets:** 
 
-Set up the following GitHub secrets in your repository for authentication and deployments:
+- Set up the following GitHub secrets in your repository for authentication and deployments:
+
 AWS_ACCESS_KEY_ID
+
 AWS_SECRET_ACCESS_KEY
+
 AWS_REGION
 ECR_REPOSITORY_URI (URI of your ECR repository)
 
@@ -39,6 +42,7 @@ ECR_REPOSITORY_URI (URI of your ECR repository)
 Start by cloning this repository to your local machine:bash Copy code
 git clone https://github.com/your-username/your-repo.git
 cd your-repo
+
 **2.** Build the Docker Image
 This project is containerized using Docker. The Dockerfile is already provided, which defines how the application is built. You can build the Docker image locally by running:
 
