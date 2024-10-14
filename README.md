@@ -32,6 +32,26 @@ This is a sample application used to demonstrate a POC of using GitHub Actions t
 
 **7. IAM Roles and Policies** – Manages access to AWS resources from ECS and GitHub Actions.
 
+## Architecture Overview
+Here’s how the system works across different environments:
+
+#### 1. GitHub Actions Workflow:
+
+Developers push code changes to the repository on dev, stage, or prod branches.
+
+#### 2. Docker Image Build and Push:
+
+The CI/CD pipeline builds a Docker image from the code and pushes it to AWS ECR.
+
+#### 3. ECS Cluster Deployment:
+
+ECS clusters (dev-cluster, stage-cluster, and prod-cluster) are configured with services and containers running on Fargate.
+
+#### 4. Networking and Security:
+
+Each ECS cluster is deployed within a VPC using public subnets and security groups.
+The security group allows HTTP traffic on port 8080 to access the running containers.
+
 ## **Deployment Process:**
 
 This project is a Node.js web application containerized with Docker and deployed on AWS Elastic Container Service (ECS) using Fargate. The infrastructure and service deployment are managed with Terraform, while the CI/CD pipeline is set up using GitHub Actions to automate the build and deployment process.
