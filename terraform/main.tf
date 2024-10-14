@@ -1,5 +1,10 @@
+variable "environment" {
+  description = "The deployment environment (dev, stage, prod)"
+  type        = string
+}
+
 locals {
-  prefix = "capstone-grp1" #Change
+  prefix = "capstone-grp1-${var.environment}"  # Append environment to prefix
 }
 
 data "aws_caller_identity" "current" {}
