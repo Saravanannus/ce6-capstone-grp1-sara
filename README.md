@@ -52,6 +52,53 @@ ECS clusters (dev-cluster, stage-cluster, and prod-cluster) are configured with 
 Each ECS cluster is deployed within a VPC using public subnets and security groups.
 The security group allows HTTP traffic on port 8080 to access the running containers.
 
+### Architecture Flow for ECS with GitHub Actions CI/CD
+
+#### 1. GitHub Actions (CI/CD Pipeline)
+
+**Input:** Developers push code to different branches (dev, stage, prod).
+
+**Action:**
+
+- Builds Docker images.
+
+- Pushes these images to AWS ECR (Elastic Container Registry).
+
+- Updates ECS task definitions with the new image.
+
+- Deploys to ECS clusters for the appropriate environment.
+#### 2. AWS ECR (Elastic Container Registry)
+
+- Stores Docker images, tagged with versions like latest or commit SHA (:abc123).
+
+- GitHub Actions authenticates and pushes images to specific repositories (dev, stage, prod).
+
+#### 3.AWS ECS Clusters (Dev, Stage, Prod)
+
+**Three Clusters:**
+
+- dev-cluster: Used for development and early testing.
+
+- stage-cluster: Pre-production for validation.
+
+- prod-cluster: The live environment for end-users.
+
+#### 4. AWS Fargate Tasks & Services
+
+ECS services run **Node.js containers** inside **Fargate tasks.**
+
+Each service is exposed on **port 8080.**
+
+#### 5. Networking Components
+
+**VPC with Public Subnets:** Each cluster resides inside a Virtual Private Cloud (VPC) with public-facing subnets.
+
+**Security Groups:** Allow **inbound HTTP traffic on port 8080** and permit all outbound traffic.
+
+#### 6. Deployment Flow
+
+**Push to GitHub → Build Image → Push to ECR → Deploy to ECS (Dev/Stage/Prod)**
+
 ## **Deployment Process:**
 
 This project is a Node.js web application containerized with Docker and deployed on AWS Elastic Container Service (ECS) using Fargate. The infrastructure and service deployment are managed with Terraform, while the CI/CD pipeline is set up using GitHub Actions to automate the build and deployment process.
