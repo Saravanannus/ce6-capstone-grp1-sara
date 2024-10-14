@@ -104,13 +104,13 @@ We recommend adding a health check endpoint (e.g., /health) to your application 
 
 ECS will periodically send health check requests to this endpoint and ensure the application is running smoothly.
 
-- Set up CloudWatch for logging and monitoring ECS tasks:
+Set up CloudWatch for logging and monitoring ECS tasks:
 
-    ECS logs can be streamed to CloudWatch to track any errors or important application events.You can also set up CloudWatch Alarms to monitor the health of your ECS service, such as task failures or high CPU/memory usage.
+ECS logs can be streamed to CloudWatch to track any errors or important application events.You can also set up CloudWatch Alarms to monitor the health of your ECS service, such as task failures or high CPU/memory usage.
 
 **6.** Ingress Traffic & Security Considerations
 For security purposes, ensure that ingress traffic is only allowed from specific IP ranges or secured over HTTPS. The ECS service security group currently allows traffic from all sources (0.0.0.0/0), but for production environments, it’s recommended to restrict access. Limit to specific trusted IP addresses or regions.Enforce HTTPS by integrating AWS Certificate Manager (ACM) with Application Load Balancer (ALB) or CloudFront for SSL/TLS termination.
 
 **Summary:**
 
-    This project leverages Docker for containerization, Terraform for AWS resource management, and GitHub Actions for automating the deployment pipeline. By following the steps outlined above, your Node.js application will be deployed on ECS using AWS Fargate, and the pipeline will automatically rebuild and deploy any changes pushed to the main branch.Make sure to monitor the application’s logs and performance in CloudWatch and ensure security best practices by restricting ingress traffic and enforcing HTTPS for production environments.
+This project leverages Docker for containerization, Terraform for AWS resource management, and GitHub Actions for automating the deployment pipeline. By following the steps outlined above, your Node.js application will be deployed on ECS using AWS Fargate, and the pipeline will automatically rebuild and deploy any changes pushed to the main branch.Make sure to monitor the application’s logs and performance in CloudWatch and ensure security best practices by restricting ingress traffic and enforcing HTTPS for production environments.
