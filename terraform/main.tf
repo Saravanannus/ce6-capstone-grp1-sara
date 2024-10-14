@@ -1,5 +1,5 @@
 locals {
-  prefix = "capstone-grp1"  #Change
+  prefix = "capstone-grp1" #Change
 }
 
 data "aws_caller_identity" "current" {}
