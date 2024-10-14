@@ -10,7 +10,9 @@ This is a sample application used to demonstrate a POC of using GitHub Actions t
 # Architecture Diagram
 
 ![image](https://github.com/user-attachments/assets/ac446041-38a4-4615-a08f-5942960dacdc)
-Deployment Process
+
+**Deployment Process:**
+
 This project is a Node.js web application containerized with Docker and deployed on AWS Elastic Container Service (ECS) using Fargate. The infrastructure and service deployment are managed with Terraform, while the CI/CD pipeline is set up using GitHub Actions to automate the build and deployment process.
 
 ### Prerequisites :
