@@ -1,6 +1,11 @@
 # ce6-capstone-grp1
 Introduction
 This is a sample application used to demonstrate a POC of using GitHub Actions to deploy to AWS ECR and Fargate.
+## The Team Consist of:
+- VVenila
+- Kerenp
+- Jyoti
+- Saravanan.B
 
 # Architecture Diagram
 
