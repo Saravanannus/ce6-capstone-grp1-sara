@@ -11,6 +11,27 @@ This is a sample application used to demonstrate a POC of using GitHub Actions t
 
 ![image](https://github.com/user-attachments/assets/ac446041-38a4-4615-a08f-5942960dacdc)
 
+
+
+![alt text](image.png)
+
+
+## List of AWS Resources used in this Project:
+
+**1. GitHub Actions** – Automates the CI/CD pipeline.
+
+**2. Amazon ECR** – Stores Docker images for different environments (dev, stage, prod).
+
+**3. Amazon ECS Fargate** – Runs containerized services without managing infrastructure.
+
+**4. Security Group** – Manages network access, allowing HTTP traffic on port 8080.
+
+**5. Amazon S3** – Stores Terraform state files.
+
+**6. VPC and Public Subnets** – Provides networking and connectivity for the ECS tasks.
+
+**7. IAM Roles and Policies** – Manages access to AWS resources from ECS and GitHub Actions.
+
 ## **Deployment Process:**
 
 This project is a Node.js web application containerized with Docker and deployed on AWS Elastic Container Service (ECS) using Fargate. The infrastructure and service deployment are managed with Terraform, while the CI/CD pipeline is set up using GitHub Actions to automate the build and deployment process.
