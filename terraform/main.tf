@@ -4,7 +4,7 @@ variable "environment" {
 }
 
 locals {
-  prefix = "capstone-grp1-${var.environment}"  # Append environment to prefix
+  prefix = "capstone-sara-${var.environment}"  # Append environment to prefix
 }
 
 data "aws_caller_identity" "current" {}
@@ -42,12 +42,12 @@ module "ecs" {
   }
 
   services = {
-    capstone-grp1 = { #task def and service name -> #Change
+    capstone-sara = { #task def and service name -> #Change
       cpu    = 512
       memory = 1024
       # Container definition(s)
       container_definitions = {
-        capstone-grp1-ecs-container = { #container name -> Change
+        capstone-sara-ecs-container = { #container name -> Change
           essential = true
           image     = "${data.aws_caller_identity.current.account_id}.dkr.ecr.${data.aws_region.current.name}.amazonaws.com/${local.prefix}-ecr:latest"
           port_mappings = [
